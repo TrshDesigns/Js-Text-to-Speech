@@ -58,4 +58,5 @@ code{
 }
 img{
     -webkit-filter: invert(1);
+    filter: inver(1);
 }

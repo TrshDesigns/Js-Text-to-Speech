@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Js Text To Speech</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/sakura.css/css/sakura.css"
@@ -19,56 +18,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--add a color theme meta tag-->
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="A website to showcase the text to speech synthesis api" />
+    <meta
+      name="description"
+      content="A website to showcase the text to speech synthesis api"
+    />
   </head>
   <body>
     <main>
-      <h1 id="title">Js Text To Speech Demo</h1>
-      <article>
-          <img width="500px"
-            draggable="false"
-            src="https://www.semana.com/resizer/FIAYIJjWcnydci_pIiJVCGOUp3w=/1200x675/filters:format(jpg):quality(70)//cloudfront-us-east-1.images.arcpublishing.com/semana/5V7NGM5JMFBPLDGIMFV6VZV3T4.jpg"
+        <img
+          width="400px"
+          draggable="false"
+          src="https://www.semana.com/resizer/FIAYIJjWcnydci_pIiJVCGOUp3w=/1200x675/filters:format(jpg):quality(70)//cloudfront-us-east-1.images.arcpublishing.com/semana/5V7NGM5JMFBPLDGIMFV6VZV3T4.jpg"
+        />
+        <div class="main-input-container">
+          <input
+            maxlength="10000"
+            contenteditable="true"
+            type="text"
+            id="messager"
+            placeholder="Type here"
           />
-          <div class="main-input-container">
-            <input
-              maxlength="10000"
-              contenteditable="true"
-              type="text"
-              id="messager"
-            />
-            <button id="starter" onclick="speechstart()">Speech Start</button>
-          </div>
-            <p>Speech Adjustments</p>
-            <div class="adjustment-container">
-              <!--create a input type range with a max of 1m and interval of 0.1 and a id of volume-->
-              <p>Volume</p>
-              <input
-                oninput="volume()"
-                type="range"
-                id="volume"
-                min="0"
-                max="1"
-                step="0.1"
-                value="1"
-              />
-              <p class="input-inf" id="current-volume">1</p>
-            </div>
-            <!--create another adjustment-container but for the pitch input-->
-            <div class="adjustment-container">
-              <!--create a input type range with a max of 1m and interval of 0.1 and a id of volume-->
-              <p>Pitch</p>
-              <input
-                oninput="pitch()"
-                type="range"
-                id="pitch"
-                min="0"
-                max="2"
-                step="0.1"
-                value="1"
-              />
-              <p class="input-inf" id="current-pitch">2</p>
-            </div>
-      </article>
+          <button id="starter" onclick="speechStart()">Speech Start</button>
+          <!--create a button with the stop utf-8 character-->
+          <button id="stopper" onclick="speechStop()">&#x1f6d1; Stop</button>
+        </div>
+        <p>Speech Adjustments</p>
+        <div class="adjustment-container">
+          <p>Volume</p>
+          <input
+            oninput="volume()"
+            type="range"
+            id="volume"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+          />
+          <p class="input-inf" id="current-volume">1</p>
+        </div>
+        <div class="adjustment-container">
+          <p>Pitch</p>
+          <input
+            oninput="pitch()"
+            type="range"
+            id="pitch"
+            min="0"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+          <p class="input-inf" id="current-pitch">2</p>
+        </div>
+        <div class="adjustment-container">
+          <p>Rate</p>
+          <input
+            oninput="rate()"
+            type="range"
+            id="rate"
+            min="0"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+          <p class="input-inf" id="current-rate">1</p>
+        </div>
     </main>
   </body>
 </html>
